@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<ul>
+    {% for persona in lista_personas %}
+    <li>
+        {{persona.id}}: {{persona.nombre}} (<a href="persona/{{persona.id}}">Ver</a>)
+    </li>
+    {% endfor %}
+</ul>
+{% endblock contenido %}

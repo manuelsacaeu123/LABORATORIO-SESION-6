@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td>Id:</td>
+        <td>{{persona.id}}</td>
+    </tr>
+    <tr>
+        <td>Nombre:</td>
+        <td>{{persona.nombre}}</td>
+    </tr>
+    <tr>
+        <td>Telefono:</td>
+        <td>{{persona.telefono}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{persona.email}}</td>
+    </tr>
+</table>
+{% endblock contenido %}
