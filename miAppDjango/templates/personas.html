@@ -2,11 +2,32 @@
 
 {% block contenido %}
 
-<ul>
-    {% for persona in lista_personas %}
-    <li>
-        {{persona.id}}: {{persona.nombre}} (<a href="persona/{{persona.id}}">Ver</a>)
-    </li>
-    {% endfor %}
-</ul>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id </th>
+                            <th scope="col">Nombre </th>
+                            <th scope="col">Telefono </th>
+                            <th scope="col">Email </th>
+                            <th scope="col">Ver </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for persona in lista_personas %}
+                    </tbody>
+                        <tr>
+                            <th scope="row">{{persona.id}}</th>
+                            <td>{{persona.nombre}}</td>
+                            <td>{{persona.telefono}}</td>
+                            <td>{{persona.email}}</td>
+                            <td>(<a href="persona/{{persona.id}}">Ver</a>)}</td>
+                        </tr>
+                        {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock contenido %}

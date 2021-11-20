@@ -13,13 +13,13 @@ class Car (models.Model):
     persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
 
     color = models.CharField(max_length=20)
-    placa = models.IntegerField
+    placa = models.IntegerField(default=0)
     fabricante = models.CharField(max_length=50)
     modelo = models.CharField(max_length=30)
     kilometraje = models.IntegerField(default=0)
 
     def __str__(self):
-        return str(self.id)+" , "+self.color+" , "+int(self.placa)+" , "+self.fabricante+" , "+str(self.modelo)+" , "+int(self.kilometraje)
+        return str(self.id)+" , "+self.color+" , "+str(self.placa)+" , "+self.fabricante+" , "+self.modelo+" , "+str(self.kilometraje)
 
 
         

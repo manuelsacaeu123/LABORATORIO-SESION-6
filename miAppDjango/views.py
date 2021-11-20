@@ -2,7 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+
+from miAppDjango.serializers import PersonaSerializer
 from .models import Persona
+from .serializers import  PersonaSerializer
+from rest_framework import  serializers, viewsets
 
 def index(request):
     """ return HttpResponse("MI PRIMERA PAGINA EN DJNAGO") """
@@ -24,3 +28,7 @@ def detail(request, persona_id):
         'persona':persona,
     }
     return render(request,'persona.html',context)
+
+class PersonaViewSet(viewsets.ModelViewSet):
+    queryset = Persona.objects.all()
+    serializer_class =PersonaSerializer
